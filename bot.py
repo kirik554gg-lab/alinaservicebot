@@ -14,23 +14,24 @@ TOKEN = "8478240025:AAE5SpfCzjJcmlMCEIHdHJnGhFykP4Cuwg8"
 # 💬 ПРИВЕТСТВЕННЫЙ ТЕКСТ (замени на свой!)
 # =============================================
 WELCOME_TEXT = """
-Добро пожаловать в службу поддержки Алины ✨
+Привет, моя дорогая подруга! 🌸
 
-Это комфортное и тихое место создано для того, чтобы каждый твой день был хорошим. Я очень рада, что ты здесь!!
+Я так рада, что ты здесь! 
+Этот бот создан специально для тебя с любовью 💕
 
-Нажимай минюшечку и выбирай🌷
-
-Разработчики: Алина&Кирилл
+Выбирай что-нибудь из меню ниже 👇
 """
 
 # =============================================
 # 📋 МЕНЮ
 # =============================================
 MENU_BUTTONS = [
-    ["🌞 Хороший день чтобы..."],
+    ["🌼 Хороший день чтобы..."],
     ["💪 Мотивашка"],
-    ["😂 Смешнявки"],
-    ["💋 Комплимент"]
+    ["🐒 Смешнявки"],
+    ["💋 Комплимент"],
+    ["⭐️ Вдохновение"],
+    ["💌 Письмо"]
 ]
 
 # =============================================
@@ -118,19 +119,39 @@ MOTIVATION_PHRASES = [
 ]
 
 # =============================================
-# 😂 СМЕШНЯВКИ
+# 😂 СМЕШНЯВКИ — картинки (file_id)
 # =============================================
-FUNNY_PHRASES = [
-    "😂 Моя диета: Буду есть только полезное — холодильник в 23:00: Привет!",
-    "🙈 Поставила будильник на 7:00, а проснулась в 7:58... Это была репетиция.",
-    "😹 Говорят, надо пить 2 литра воды. Кофе на 98% вода — значит всё норм.",
-    "🤣 Я не прокрастинирую, я стратегически жду момента паники.",
-    "😆 Мой мозг в 3 ночи: А помнишь тот стыдный момент из 2015 года?",
-    "🐱 Кот смотрит в угол. Либо духи, либо дурачится. Думаю — дурачится.",
-    "😴 Мне нужно 5 минут полежать — сказала я 3 часа назад.",
-    "🍕 Пицца — это хлеб. Хлеб полезен. Логика железная. Всё.",
-    "🤦 Пришла на кухню и забыла зачем. Зато вернулась с печенькой!",
-    "😂 Спорт — это когда искала пульт и сходила за ним три раза.",
+FUNNY_IMAGES = [
+    "AgACAgIAAxkBAAFFEARpubbzxIhN4G7prEJgJjWmPyymQgACVhlrG6se0Eks-3kot8V9vQEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEAVpubbz4XXW7v7CFuIPTwbh2Q-NwwACVxlrG6se0EnHMle3PXiugQEAAwIAA3gAAzoE",
+    "AgACAgIAAxkBAAFFEAZpubbzLbeRcZmvei9SMxJNCWXAHwACWBlrG6se0EnHy9UZcHhT0QEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEAdpubbzi6W9j5K16vjx-BlP-mxzBAACWRlrG6se0EkM828JalwnuAEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEAhpubbz-YIX96tVgdvvmDqc3BSEUQACWhlrG6se0EkVyG9qWvUogAEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEAlpubbz2O8ZzmypEtmzexFpjQwqggACXxlrG6se0EnJQ2E3H3u1IwEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEAppubbzlj-CDgm-5Wgh3M76YevmjAACWxlrG6se0EnlyzxUSAK-mAEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEAtpubbzeLB28DogjkVl23oxFKtsBAACXBlrG6se0En4I3qcFGAhugEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEAxpubbzIDLzURR5rwpRUU2FajSchwACYRlrG6se0EmJG12lvt_RAwEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEA1pubbzuJ7FeRzDSL0cZ6ET2d9fJwACXRlrG6se0EnejxmgWmdPsAEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEA5pubbz8vouiaC8KubEEZwFyAsGJAACXhlrG6se0Eka7hEf036VjAEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEA9pubbz2yaEJ4IAAf-M2zGZdQQsirsAAmAZaxurHtBJNxfehvl65QABAQADAgADcwADOgQ",
+    "AgACAgIAAxkBAAFFEBBpubbz2ZO5CqRHOp_c36AZdnF-xwACYhlrG6se0EkTI1PWkarsOgEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEBFpubbzCuQTBTM-G6ju28Lw6FWwPgACYxlrG6se0Eli7R_8q9W9pAEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEBJpubbzCvyEh1V-DuRYZuX_xzRl3gACZBlrG6se0Eme6vn3LH_VEwEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEBNpubbzX0z2IaJlgDLs1p6qZihJ0AACZRlrG6se0ElcwOpBY00bfgEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEBRpubbzWEQbUJU5RyMTEkfxE9nYngACZhlrG6se0Em9ZGe5GBxDogEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEBVpubbzfPgHCuXw5oPkg2992yemKgACZxlrG6se0ElozmMZHLDujAEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEBZpubbz2si6xMtqXGzJLSx2nG5W_AACaBlrG6se0EkO3gzmf_3qGgEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEBdpubbziEj-iMgO1ZC4Brr1TEo4CwACaRlrG6se0En6n7NORghv4wEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEBhpubbzDlf6LglSswgMXDfWdLHLqAACahlrG6se0El7jEBdPu3xDgEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEBlpubbzipQpVoztUwJCtDXyCNB49AACaxlrG6se0EmgI2lJJgAB_u0BAAMCAANzAAM6BA",
+    "AgACAgIAAxkBAAFFEBtpubbzjOLo1JwqU3LEXrBnV5wL7QACbRlrG6se0EkhTN9lTg7UBwEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEBppubbzeqCnGdgUA4xINF9OPwR61AACbBlrG6se0EnRPxr3oDzWkAEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEBxpubbzJVunr5gJXvX1KO07pi-X2gACbhlrG6se0En1tCfl7k-7mQEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEB1pubbzlzSD1Cn53CiMPboNS8eHHQACbxlrG6se0EmPXZtVKfIqYgEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFEB5pubbzzakCWJUfAZYOZbKjLZCqBQACcBlrG6se0ElWpZjgjkLFKAEAAwIAA20AAzoE",
+    "AgACAgIAAxkBAAFFEB9pubbzS9_XTT83quyugB5WtlxWvAACcRlrG6se0EnfOu6TbVX3EQEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFECBpubbzhtzD-1toYX1RWF_3nwK1UgACchlrG6se0EnMQsq5AknKhwEAAwIAA3MAAzoE",
+    "AgACAgIAAxkBAAFFECFpubbzK0Wmc2nSgyPMa_Jj-GSBzQACcxlrG6se0ElQAdIJGmev1QEAAwIAA3MAAzoE",
 ]
 
 
@@ -177,6 +198,50 @@ COMPLIMENT_PHRASES = [
 ]
 
 # =============================================
+# ⭐️ ВДОХНОВЕНИЕ
+# =============================================
+INSPIRATION_PHRASES = [
+    "🌅 Каждый новый день — это чистая страница. Что ты напишешь на ней сегодня?",
+    "🦋 Самые красивые истории начинаются с одного маленького решения.",
+    "🌊 Не бойся глубины — именно там скрывается всё самое интересное.",
+    "🔑 Дверь к твоей мечте уже существует. Ты просто ещё ищешь ключ.",
+    "🌱 Из самых маленьких семян вырастают самые большие деревья.",
+    "✨ Твоя жизнь — это произведение искусства, и только ты держишь кисть.",
+    "🏔 Горы не становятся меньше. Но ты становишься сильнее с каждым шагом.",
+    "💫 Вселенная не случайно привела тебя именно сюда, именно сейчас.",
+    "🎨 Не существует правильного способа прожить свою жизнь — только твой.",
+    "🌸 Позволь себе расцветать в своём собственном темпе.",
+    "🕊 Лёгкость приходит тогда, когда перестаёшь бороться с собой.",
+    "⚡ Внутри тебя есть энергия, которая способна изменить всё вокруг.",
+    "🌙 Даже в самую тёмную ночь звёзды продолжают светить.",
+    "🎯 Ты не должна знать весь путь — достаточно видеть следующий шаг.",
+    "🦁 Смелость — это не отсутствие страха. Это решение идти вперёд несмотря на него.",
+    "🍃 Отпусти то, что тебя тянет вниз — и посмотри, как высоко ты взлетишь.",
+    "💎 Алмаз — это просто уголь, который не сдался под давлением.",
+    "🌺 Красота жизни — в её непредсказуемости. Доверяй процессу.",
+    "🚀 Ты способна на гораздо большее, чем позволяешь себе думать.",
+    "🎵 Жизнь — это музыка. Не бойся играть свою мелодию громко.",
+    "🌟 Каждая версия тебя, которую ты уже прожила — была необходима для этой.",
+    "🔥 Страсть — это компас. Иди туда, куда тянет сердце.",
+    "🏡 Твой внутренний мир — самое важное место, о котором стоит заботиться.",
+    "🌈 После любого шторма небо становится чище и ярче.",
+    "💡 Одна идея, в которую ты веришь, сильнее тысячи сомнений.",
+    "🦋 Трансформация всегда выглядит как хаос изнутри кокона.",
+    "🎁 Твои таланты — это подарок не только тебе, но и всему миру.",
+    "🌊 Плыви не против течения — учись использовать его силу.",
+    "⭐️ Ты уже являешься тем, кем мечтаешь стать — просто ещё не знаешь об этом.",
+    "🕯 Одна свеча способна осветить целую комнату тьмы. Будь этой свечой.",
+]
+
+# =============================================
+# 💌 ПИСЬМО
+# =============================================
+LETTER_TEXT = """💌 *Письмо для тебя...*
+
+Текст письма будет здесь совсем скоро 🌸
+"""
+
+# =============================================
 # ⚙️ ЛОГИКА БОТА
 # =============================================
 
@@ -212,17 +277,31 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             parse_mode="Markdown",
             reply_markup=get_menu_keyboard()
         )
-    elif text == "😂 Смешнявки":
-        phrase = random.choice(FUNNY_PHRASES)
-        await update.message.reply_text(
-            f"😂 *Смешнявка:*\n\n{phrase}",
-            parse_mode="Markdown",
+    elif text == "🐒 Смешнявки":
+        image = random.choice(FUNNY_IMAGES)
+        await update.message.reply_photo(
+            photo=image,
             reply_markup=get_menu_keyboard()
         )
     elif text == "💋 Комплимент":
         phrase = random.choice(COMPLIMENT_PHRASES)
         await update.message.reply_text(
             "💋 *Комплимент для тебя:*\n\n" + phrase,
+            parse_mode="Markdown",
+            reply_markup=get_menu_keyboard()
+        )
+
+    elif text == "⭐️ Вдохновение":
+        phrase = random.choice(INSPIRATION_PHRASES)
+        await update.message.reply_text(
+            "⭐️ *Вдохновение дня:*\n\n" + phrase,
+            parse_mode="Markdown",
+            reply_markup=get_menu_keyboard()
+        )
+
+    elif text == "💌 Письмо":
+        await update.message.reply_text(
+            LETTER_TEXT,
             parse_mode="Markdown",
             reply_markup=get_menu_keyboard()
         )
