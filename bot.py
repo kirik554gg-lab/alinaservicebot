@@ -27,10 +27,10 @@ WELCOME_TEXT = """
 # =============================================
 MENU_BUTTONS = [
     ["🌼 Хороший день чтобы..."],
-    ["💪 Мотивашка"],
+    ["⭐️ Мотивашка"],
     ["🐒 Смешнявки"],
     ["💋 Комплимент"],
-    ["⭐️ Вдохновение"],
+    ["💗 Вдохновение"],
     ["💌 Письмо"]
 ]
 
@@ -263,17 +263,17 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
 
-    if text == "🌞 Хороший день чтобы...":
+    if text == "🌼 Хороший день чтобы...":
         phrase = random.choice(GOOD_DAY_PHRASES)
         await update.message.reply_text(
-            f"🌞 *Хороший день чтобы...*\n\n{phrase}",
+            f"🌼 *Хороший день чтобы...*\n\n{phrase}",
             parse_mode="Markdown",
             reply_markup=get_menu_keyboard()
         )
-    elif text == "💪 Мотивашка":
+    elif text == "⭐️ Мотивашка":
         phrase = random.choice(MOTIVATION_PHRASES)
         await update.message.reply_text(
-            f"💪 *Мотивашка дня:*\n\n{phrase}",
+            f"⭐️ *Мотивашка дня:*\n\n{phrase}",
             parse_mode="Markdown",
             reply_markup=get_menu_keyboard()
         )
@@ -291,10 +291,10 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=get_menu_keyboard()
         )
 
-    elif text == "⭐️ Вдохновение":
+    elif text == "💗 Вдохновение":
         phrase = random.choice(INSPIRATION_PHRASES)
         await update.message.reply_text(
-            "⭐️ *Вдохновение дня:*\n\n" + phrase,
+            "💗 *Вдохновение дня:*\n\n" + phrase,
             parse_mode="Markdown",
             reply_markup=get_menu_keyboard()
         )
